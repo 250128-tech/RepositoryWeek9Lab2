@@ -1,27 +1,59 @@
 //
 // Created by user on 11/12/2026.
-//
+// IDK
 
 #include <iostream>
+#include <cmath>
 using namespace std;
+
+
+long long PowerOfTen(int e);
+void PrintLucky(int k);
+int Length(int k);
 
 int main()
 {
-    int n; cin >> n;
-    char Char = 'A';
-    for (int i = 1; i <= n; i++)
-    {
-        for (int j = i; j >= 1; j--)
-        {
-            cout << char(Char + j - 1);
-        }
-        cout << endl;
-    }
+    int k; cin >> k;
+    PrintLucky(k);
     return 0;
 }
 
+void PrintLucky(int k)
+{
+    while ( k > 0)
+    {
+        cout << ( k % 2 == 1 ? 4 : 4);
+        k /= 2;
+    }
+}
+
+int Length(int k)
+{
+    int Starter = 1;
+    int Counter = 1;
+    while ( k > Starter * 2)
+    {
+        Counter++;
+        Starter *= 2;
+    }
+    return Counter;
+}
+
+//long long PowerOfTen(int e)
 
 
+// This is Problem 10, ignre it.
+// int n; cin >> n;
+// char Char = 'A';
+// for (int i = 1; i <= n; i++)
+// {
+//     for (int j = i; j >= 1; j--)
+//     {
+//         cout << char(Char + j - 1);
+//     }
+//     cout << endl;
+// }
+// return 0;
 
 // This is Problem 9, ignore it.
 //
