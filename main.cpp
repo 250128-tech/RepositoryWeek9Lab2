@@ -1,7 +1,44 @@
 //
 // Created by user on 11/12/2026.
 //
+
 #include <iostream>
+using namespace std;
+
+bool isPalindrome(int Number);
+
+int main()
+{
+    int n; cin >> n;
+    int SumNum = 0;
+
+    for ( int i = 1; i <= n; i++)
+    {
+        if (isPalindrome(i)){SumNum+=i;}
+    }
+
+    cout << SumNum;
+    return 0;
+}
+
+bool isPalindrome(int Number)
+{
+    bool ifPalindrome = 1;
+    int MirrorNumber = 0;
+    int NumberCopy = Number;
+    while (true)
+    {
+        if ( Number == 0 ) { break;}
+        MirrorNumber = MirrorNumber*10+Number%10;
+        Number /= 10;
+    }
+    if ( NumberCopy != MirrorNumber ) { ifPalindrome = 0; }
+    return ifPalindrome;
+}
+
+/* this is problem 8. it was here, so i just made it a comment. no need to check this. thankyou.
+ *
+ * #include <iostream>
 using namespace std;
 
 
@@ -25,4 +62,4 @@ int main()
     }
     cout << Product << ' ' << Largest;
 
-}
+}*/
